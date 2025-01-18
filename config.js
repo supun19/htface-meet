@@ -1196,8 +1196,8 @@ var config = {
     // the user region as seen by the server.
     deploymentInfo: {
         shard: "shard1",
-        region: "eu-central-1",
-        userRegion: "eu-central-1",
+        region: "us-east-1",
+        userRegion: "us-east-1",
     },
 
     // Array<string> of disabled sounds.
