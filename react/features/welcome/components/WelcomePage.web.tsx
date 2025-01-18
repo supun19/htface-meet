@@ -378,7 +378,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
         return (<footer className = 'welcome-footer'>
             <div className = 'welcome-footer-centered'>
                 <div className = 'welcome-footer-padded'>
-                    <div className = 'welcome-footer-row-block welcome-footer--row-1'>
+                    {/* <div className = 'welcome-footer-row-block welcome-footer--row-1'>
                         <div className = 'welcome-footer-row-1-text'>{t('welcomepage.jitsiOnMobile')}</div>
                         <a
                             className = 'welcome-badge'
@@ -401,7 +401,7 @@ class WelcomePage extends AbstractWelcomePage<IProps> {
                                 alt = { t('welcomepage.mobileDownLoadLinkFDroid') }
                                 src = './images/f-droid-badge.png' />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>);
