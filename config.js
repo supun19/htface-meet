@@ -30,26 +30,26 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'jitsi-meet.example.com',
+        domain: 'eu-central-1.meet.htface.tech',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'jitsi-meet.example.com',
+        // authdomain: 'eu-central-1.meet.htface.tech',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.jitsi-meet.example.com',
+        // focus: 'focus.eu-central-1.meet.htface.tech',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.' + subdomain + 'jitsi-meet.example.com',
+        muc: 'conference.' + subdomain + 'eu-central-1.meet.htface.tech',
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: 'https://jitsi-meet.example.com/' + subdir + 'http-bind',
+    bosh: 'https://eu-central-1.meet.htface.tech/' + subdir + 'http-bind',
 
     // Websocket URL (XMPP)
-    // websocket: 'wss://jitsi-meet.example.com/' + subdir + 'xmpp-websocket',
+    // websocket: 'wss://eu-central-1.meet.htface.tech/' + subdir + 'xmpp-websocket',
 
     // Whether BOSH should be preferred over WebSocket if both are configured.
     // preferBosh: false,
@@ -57,11 +57,11 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.jitsi-meet.example.com',
+    // focusUserJid: 'focus@auth.eu-central-1.meet.htface.tech',
 
     // Option to send conference requests to jicofo over http (requires nginx rule for it)
     // conferenceRequestUrl:
-    //   'https://<!--# echo var="http_host" default="jitsi-meet.example.com" -->/' + subdir + 'conference-request/v1',
+    //   'https://<!--# echo var="http_host" default="eu-central-1.meet.htface.tech" -->/' + subdir + 'conference-request/v1',
 
     // Options related to the bridge (colibri) data channel
     bridgeChannel: {
@@ -103,6 +103,9 @@ var config = {
 
         // Dump transcripts to a <transcript> element for debugging.
         // dumpTranscript: false,
+        octo: {
+            probability: 1
+        }
     },
 
     // Disables moderator indicators.
@@ -370,10 +373,11 @@ var config = {
     //     appKey: '<APP_KEY>', // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://jitsi-meet.example.com/static/oauth.html'
+    //     // 'https://eu-central-1.meet.htface.tech/static/oauth.html'
     //     redirectURI:
-    //          'https://jitsi-meet.example.com/subfolder/static/oauth.html',
+    //          'https://eu-central-1.meet.htface.tech/subfolder/static/oauth.html',
     // },
+    hiddenDomain:"recorder.eu-central-1.meet.htface.tech",
 
     // configuration for all things recording related. Existing settings will be migrated here in the future.
     // recordings: {
@@ -389,21 +393,21 @@ var config = {
     //    // showRecordingLink: true,
     // },
 
-    // recordingService: {
-    //     // When integrations like dropbox are enabled only that will be shown,
-    //     // by enabling fileRecordingsServiceEnabled, we show both the integrations
-    //     // and the generic recording service (its configuration and storage type
-    //     // depends on jibri configuration)
-    //     enabled: false,
+    recordingService: {
+        // When integrations like dropbox are enabled only that will be shown,
+        // by enabling fileRecordingsServiceEnabled, we show both the integrations
+        // and the generic recording service (its configuration and storage type
+        // depends on jibri configuration)
+        enabled: true,
 
-    //     // Whether to show the possibility to share file recording with other people
-    //     // (e.g. meeting participants), based on the actual implementation
-    //     // on the backend.
-    //     sharingEnabled: false,
+        // Whether to show the possibility to share file recording with other people
+        // (e.g. meeting participants), based on the actual implementation
+        // on the backend.
+        sharingEnabled: true,
 
-    //     // Hide the warning that says we only store the recording for 24 hours.
-    //     hideStorageWarning: false,
-    // },
+        // Hide the warning that says we only store the recording for 24 hours.
+        hideStorageWarning: false,
+    },
 
     // DEPRECATED. Use recordingService.enabled instead.
     // fileRecordingsServiceEnabled: false,
@@ -424,10 +428,10 @@ var config = {
     // },
 
     // Customize the Live Streaming dialog. Can be modified for a non-YouTube provider.
-    // liveStreaming: {
-    //    // Whether to enable live streaming or not.
-    //    enabled: false,
-    //    // Terms link
+    liveStreaming: {
+       // Whether to enable live streaming or not.
+       enabled: true,
+       // Terms link
     //    termsLink: 'https://www.youtube.com/t/terms',
     //    // Data privacy link
     //    dataPrivacyLink: 'https://policies.google.com/privacy',
@@ -435,7 +439,7 @@ var config = {
     //    validatorRegExpString: '^(?:[a-zA-Z0-9]{4}(?:-(?!$)|$)){4}',
     //    // Documentation reference for the live streaming feature.
     //    helpLink: 'https://jitsi.org/live'
-    // },
+    },
 
     // DEPRECATED. Use liveStreaming.enabled instead.
     // liveStreamingEnabled: false,
@@ -1117,7 +1121,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:jitsi-meet.example.com:3478' },
+            // { urls: 'stun:eu-central-1.meet.htface.tech:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' },
         ],
 
@@ -1190,11 +1194,11 @@ var config = {
 
     // Information about the jitsi-meet instance we are connecting to, including
     // the user region as seen by the server.
-    // deploymentInfo: {
-    //     shard: "shard1",
-    //     region: "europe",
-    //     userRegion: "asia",
-    // },
+    deploymentInfo: {
+        shard: "shard1",
+        region: "eu-central-1",
+        userRegion: "eu-central-1",
+    },
 
     // Array<string> of disabled sounds.
     // Possible values:
@@ -1521,10 +1525,10 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.jitsi-meet.example.com',
+    // moderatedRoomServiceUrl: 'https://moderated.eu-central-1.meet.htface.tech',
 
     // If true, tile view will not be enabled automatically when the participants count threshold is reached.
-    // disableTileView: true,
+    disableTileView: true,
 
     // If true, the tiles will be displayed contained within the available space rather than enlarged to cover it,
     // with a 16:9 aspect ratio (old behaviour).
@@ -1789,13 +1793,13 @@ var config = {
     // },
 
     // Tile view related config options.
-    // tileView: {
-    //     // Whether tileview should be disabled.
-    //     disabled: false,
-    //     // The optimal number of tiles that are going to be shown in tile view. Depending on the screen size it may
-    //     // not be possible to show the exact number of participants specified here.
-    //     numberOfVisibleTiles: 25,
-    // },
+    tileView: {
+        // Whether tileview should be disabled.
+        disabled: false,
+        // The optimal number of tiles that are going to be shown in tile view. Depending on the screen size it may
+        // not be possible to show the exact number of participants specified here.
+        // numberOfVisibleTiles: 25,
+    },
 
     // Specifies whether the chat emoticons are disabled or not
     // disableChatSmileys: false,
