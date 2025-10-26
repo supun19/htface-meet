@@ -30,26 +30,26 @@ var config = {
 
     hosts: {
         // XMPP domain.
-        domain: 'eu-central-1.meet.htface.tech',
+        domain: 'meet-v2.htface.tech',
 
         // When using authentication, domain for guest users.
         // anonymousdomain: 'guest.example.com',
 
         // Domain for authenticated users. Defaults to <domain>.
-        // authdomain: 'eu-central-1.meet.htface.tech',
+        // authdomain: 'meet-v2.htface.tech',
 
         // Focus component domain. Defaults to focus.<domain>.
-        // focus: 'focus.eu-central-1.meet.htface.tech',
+        // focus: 'focus.meet-v2.htface.tech',
 
         // XMPP MUC domain. FIXME: use XEP-0030 to discover it.
-        muc: 'conference.' + subdomain + 'eu-central-1.meet.htface.tech',
+        muc: 'conference.' + subdomain + 'meet-v2.htface.tech',
     },
 
     // BOSH URL. FIXME: use XEP-0156 to discover it.
-    bosh: 'https://eu-central-1.meet.htface.tech/' + subdir + 'http-bind',
+    bosh: 'https://meet-v2.htface.tech/' + subdir + 'http-bind',
 
     // Websocket URL (XMPP)
-    // websocket: 'wss://eu-central-1.meet.htface.tech/' + subdir + 'xmpp-websocket',
+    // websocket: 'wss://meet-v2.htface.tech/' + subdir + 'xmpp-websocket',
 
     // Whether BOSH should be preferred over WebSocket if both are configured.
     // preferBosh: false,
@@ -57,11 +57,11 @@ var config = {
     // The real JID of focus participant - can be overridden here
     // Do not change username - FIXME: Make focus username configurable
     // https://github.com/jitsi/jitsi-meet/issues/7376
-    // focusUserJid: 'focus@auth.eu-central-1.meet.htface.tech',
+    // focusUserJid: 'focus@auth.meet-v2.htface.tech',
 
     // Option to send conference requests to jicofo over http (requires nginx rule for it)
     // conferenceRequestUrl:
-    //   'https://<!--# echo var="http_host" default="eu-central-1.meet.htface.tech" -->/' + subdir + 'conference-request/v1',
+    //   'https://<!--# echo var="http_host" default="meet-v2.htface.tech" -->/' + subdir + 'conference-request/v1',
 
     // Options related to the bridge (colibri) data channel
     bridgeChannel: {
@@ -373,11 +373,11 @@ var config = {
     //     appKey: '<APP_KEY>', // Specify your app key here.
     //     // A URL to redirect the user to, after authenticating
     //     // by default uses:
-    //     // 'https://eu-central-1.meet.htface.tech/static/oauth.html'
+    //     // 'https://meet-v2.htface.tech/static/oauth.html'
     //     redirectURI:
-    //          'https://eu-central-1.meet.htface.tech/subfolder/static/oauth.html',
+    //          'https://meet-v2.htface.tech/subfolder/static/oauth.html',
     // },
-    hiddenDomain:"recorder.eu-central-1.meet.htface.tech",
+    hiddenDomain:"recorder.meet-v2.htface.tech",
 
     // configuration for all things recording related. Existing settings will be migrated here in the future.
     // recordings: {
@@ -1121,7 +1121,7 @@ var config = {
         // The STUN servers that will be used in the peer to peer connections
         stunServers: [
 
-            // { urls: 'stun:eu-central-1.meet.htface.tech:3478' },
+            // { urls: 'stun:meet-v2.htface.tech:3478' },
             { urls: 'stun:meet-jit-si-turnrelay.jitsi.net:443' },
         ],
 
@@ -1196,8 +1196,8 @@ var config = {
     // the user region as seen by the server.
     deploymentInfo: {
         shard: "shard1",
-        region: "eu-central-1",
-        userRegion: "eu-central-1",
+        region: "fra1",
+        userRegion: "fra1",
     },
 
     // Array<string> of disabled sounds.
@@ -1525,7 +1525,7 @@ var config = {
     // The URL of the moderated rooms microservice, if available. If it
     // is present, a link to the service will be rendered on the welcome page,
     // otherwise the app doesn't render it.
-    // moderatedRoomServiceUrl: 'https://moderated.eu-central-1.meet.htface.tech',
+    // moderatedRoomServiceUrl: 'https://moderated.meet-v2.htface.tech',
 
     // If true, tile view will not be enabled automatically when the participants count threshold is reached.
     disableTileView: true,
